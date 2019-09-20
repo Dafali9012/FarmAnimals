@@ -17,11 +17,9 @@ public class Barn {
     }
 
     public void addAnimal(FarmAnimal animal) {
-        if(animalsIndex == animals.length) {
+        if (animalsIndex == animals.length) {
             System.out.printf("The barn is full!%n%n");
-        }
-        else
-        {
+        } else {
             animals[animalsIndex] = animal;
             animalsIndex++;
         }
@@ -34,8 +32,8 @@ public class Barn {
     public FarmAnimal[] getAnimals() {
         FarmAnimal[] animalsShort = new FarmAnimal[animalsIndex];
         int i = 0;
-        while(i<animalsShort.length) {
-            animalsShort[i]=animals[i];
+        while (i < animalsShort.length) {
+            animalsShort[i] = animals[i];
             i++;
         }
         return animalsShort;

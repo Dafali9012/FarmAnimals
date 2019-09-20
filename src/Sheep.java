@@ -4,12 +4,11 @@ public class Sheep extends FarmAnimal {
     }
 
     public Sheep(String name) {
-        super(name,"Baa");
+        super(name, "Baa");
     }
 
     @Override
     public String toString() {
-        String animalAndNoise = "The sheep named " + getName() + " makes the sound: " + noise();
-        return animalAndNoise;
+        return "The sheep named " + getName() + " makes the sound: " + noise();
     }
 }

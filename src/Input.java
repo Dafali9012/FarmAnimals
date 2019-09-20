@@ -19,7 +19,7 @@ public abstract class Input {
         return input;
     }
 
-    public static int getInt(){
+    public static int getInt() {
         boolean success = false;
         int input = 0;
         Scanner scan = new Scanner(System.in);
