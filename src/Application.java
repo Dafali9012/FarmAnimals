@@ -33,14 +33,14 @@ public class Application {
     }
 
     private static void addAnimal() {
-        String animalTypes = "CowSheep";
+        String animalTypes = "Cow, Sheep";
         if (barn.getAnimals().length == barn.getMaxAnimals()) {
             System.out.printf("The barn is full!%n%n");
         } else {
             System.out.print("What type of animal do you want to add: ");
             String animalChoice = Input.getString();
-            if (!animalTypes.contains(animalChoice)) {
-                System.out.printf("That animal does not exist!%n%n");
+            if (!animalTypes.contains(animalChoice.substring(0,1).toUpperCase()+animalChoice.substring(1).toLowerCase())) {
+                System.out.printf("That animal does not exist!%nExisting animals: "+animalTypes+"%n%n");
                 selection();
                 return;
             }
