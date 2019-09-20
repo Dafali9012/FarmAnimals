@@ -3,9 +3,14 @@ public class Application {
     private static Barn barn;
 
     public static void main(String[] args) {
-        System.out.print("Choose how many animals will fit in the barn: ");
-        int n = Input.getInt();
-        barn = new Barn(n>0?n:1);
+
+        int n = 1;
+        do{
+            if(n<1)System.out.printf("Invalid animal limit%n");
+            System.out.print("Choose how many animals will fit in the barn: ");
+            n = Input.getInt();
+        }while(n<1);
+        barn = new Barn(n);
         System.out.printf("%n");
         selection();
     }

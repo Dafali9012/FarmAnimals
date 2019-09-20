@@ -12,7 +12,8 @@ public abstract class Input {
                 input = scan.nextLine();
                 success = true;
             } catch (InputMismatchException e) {
-                System.out.print("Illegal input: ");
+                System.out.print("Illegal input%n" +
+                        "Enter again: ");
             }
         }
         while (!success);
@@ -28,7 +29,8 @@ public abstract class Input {
                 input = scan.nextInt();
                 success = true;
             } catch (InputMismatchException e) {
-                System.out.print("Illegal input: ");
+                System.out.print("Illegal input%n" +
+                        "Enter again: ");
                 scan.nextLine();
             }
         }
