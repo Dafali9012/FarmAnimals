@@ -7,7 +7,7 @@ public class Application {
 
     public static void main(String[] args) {
         System.out.print("Choose how many animals will fit in the barn: ");
-        barn = new Barn(intInput());
+        barn = new Barn(Input.getInt());
         System.out.printf("%n");
         selection();
     }
@@ -17,7 +17,7 @@ public class Application {
         System.out.printf("2. Listen to the animals in the barn%n%n");
         System.out.printf("3. Quit%n%n");
         System.out.printf("What do you want to do: ");
-        int choice = intInput();
+        int choice = Input.getInt();
         System.out.printf("%n");
         switch (choice) {
             case 1:
@@ -43,9 +43,9 @@ public class Application {
         else
         {
             System.out.printf("What type of animal do you want to add: ");
-            String animalChoice = stringInput();
+            String animalChoice = Input.getString();
             System.out.printf("What would you like to name the animal: ");
-            String animalName = stringInput();
+            String animalName = Input.getString();
             if(animalChoice.equalsIgnoreCase("Cow"))barn.addAnimal(new Cow(animalName));
             if(animalChoice.equalsIgnoreCase("Sheep"))barn.addAnimal(new Sheep(animalName));
             System.out.printf("%n");
@@ -65,37 +65,6 @@ public class Application {
         selection();
     }
 
-    private static int intInput() {
-        boolean success = false;
-        int input = 0;
-        Scanner scan = new Scanner(System.in);
-        do {
-            try {
-                input = scan.nextInt();
-                success = true;
-            } catch (InputMismatchException e) {
-                System.out.print("Illegal input: ");
-                scan.nextLine();
-            }
-        }
-        while (!success);
-        scan.nextLine();
-        return input;
-    }
 
-    private static String stringInput() {
-        boolean success = false;
-        String input = "";
-        Scanner scan = new Scanner(System.in);
-        do {
-            try {
-                input = scan.nextLine();
-                success = true;
-            } catch (InputMismatchException e) {
-                System.out.print("Illegal input: ");
-            }
-        }
-        while (!success);
-        return input;
-    }
+
 }
