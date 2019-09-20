@@ -4,7 +4,8 @@ public class Application {
 
     public static void main(String[] args) {
         System.out.print("Choose how many animals will fit in the barn: ");
-        barn = new Barn(Input.getInt());
+        int n = Input.getInt();
+        barn = new Barn(n>0?n:1);
         System.out.printf("%n");
         selection();
     }
